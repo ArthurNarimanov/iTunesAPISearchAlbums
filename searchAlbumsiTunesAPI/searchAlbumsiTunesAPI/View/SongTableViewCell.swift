@@ -8,12 +8,12 @@
 
 import UIKit
 // MARK: - show table songs
-class SongTableViewCell: UITableViewCell {
+final class SongTableViewCell: UITableViewCell {
 
     @IBOutlet weak var numberLable: UILabel!
     @IBOutlet weak var songLable: UILabel!
   
-    func setupSong(with song: SongResult){
+	final func setupSong(with song: SongResult){
         if let trackNumber = song.trackNumber {
         numberLable.text = "\(trackNumber)"
         }

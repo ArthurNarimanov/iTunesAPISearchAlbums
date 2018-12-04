@@ -8,7 +8,7 @@
 
 import UIKit
 // MARK: - class shows parameter albums and list of songs
-class ResultViewController: UIViewController {
+final class ResultViewController: UIViewController {
     
     @IBOutlet weak var activityIndicatorTableView: UIActivityIndicatorView!
     var collectionId:   Int =   0
@@ -64,9 +64,9 @@ class ResultViewController: UIViewController {
     
     @IBOutlet weak var songTableView: UITableView!
     
-        var album: AlbumResult?
+		var album: AlbumResult?
     
-    var itemsSongArray: [SongResult] = [] {
+	var itemsSongArray: [SongResult] = [] {
         didSet{
             DispatchQueue.main.async {
                 self.songTableView?.reloadData()

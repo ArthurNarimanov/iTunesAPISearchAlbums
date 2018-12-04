@@ -8,7 +8,7 @@
 
 import UIKit
 // MARK: - class search and shows albums
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
 
     @IBOutlet weak var searchBarAlbums: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -31,7 +31,7 @@ class SearchViewController: UIViewController {
         searchBarAlbums.delegate = self
     }
 	// MARK: - Network func search albums
-    func makeNetworkRequest(errorHandler: (() -> Void)?) {
+	final func makeNetworkRequest(errorHandler: (() -> Void)?) {
         guard let searchText = searchBarAlbums.text else { return }
         if searchText != "" {
             SearchAlbums().search(nameSearch: searchText) { (album, count) in

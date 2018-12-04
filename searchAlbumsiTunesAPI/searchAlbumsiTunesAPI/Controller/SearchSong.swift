@@ -9,8 +9,8 @@
 import Foundation
 
 //MARK: - search songs by albums
-class SearchSong {
-    func search(collectionId: Int, complection: @escaping ([SongResult]?)-> Void){
+final class SearchSong {
+	final func search(collectionId: Int, complection: @escaping ([SongResult]?)-> Void){
         guard let url = URL(string: "https://itunes.apple.com/lookup?id=\(collectionId)&entity=song&attribute=songTerm&limit=200.") else { return }
         let sesseon = URLSession.shared
         sesseon.dataTask(with: url) { (data, response, error) in

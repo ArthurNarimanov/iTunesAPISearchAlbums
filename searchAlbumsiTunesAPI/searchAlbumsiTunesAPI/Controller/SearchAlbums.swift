@@ -8,8 +8,8 @@
 
 //MARK: - search and sorted albums
 import Foundation
-class SearchAlbums {
-    func search(nameSearch: String, completion: @escaping ([AlbumResult]?, Int) -> Void) {
+final class SearchAlbums {
+	final func search(nameSearch: String, completion: @escaping ([AlbumResult]?, Int) -> Void) {
         let limit: Int = 200 // this is max for API iTunes
         guard let url = URL(string: "https://itunes.apple.com/search?term=\(nameSearch.replacingOccurrences(of: " ", with: "+"))&entity=album&attribute=albumTerm&limit=\(limit).") else { return }
         

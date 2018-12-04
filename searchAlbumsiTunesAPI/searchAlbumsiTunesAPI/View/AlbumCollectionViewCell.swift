@@ -8,7 +8,7 @@
 
 import UIKit
 // MARK: - Show collection cell 
-class AlbumCollectionViewCell: UICollectionViewCell {
+final class AlbumCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameArtistLabel: UILabel!
@@ -16,7 +16,7 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     
-    var album: AlbumResult? {
+	var album: AlbumResult? {
         didSet {
             nameArtistLabel.text = album?.artistName
             nameAlbumLable.text = album?.collectionCensoredName
