@@ -84,7 +84,7 @@ final class ResultViewController: UIViewController {
     }
 	// MARK: - Network func search by album
     func makeNetworkRequestSong(collectionId: Int) {
-        SearchSong().search(collectionId: collectionId) { (song) in
+		ITunesAPI().searchSongs(collectionId: collectionId) { (song) in
             if let song = song {
                 DispatchQueue.main.async {
                     self.itemsSongArray += song

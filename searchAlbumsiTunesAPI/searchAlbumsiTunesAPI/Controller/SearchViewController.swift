@@ -34,7 +34,7 @@ final class SearchViewController: UIViewController {
 	final func makeNetworkRequest(errorHandler: (() -> Void)?) {
         guard let searchText = searchBarAlbums.text else { return }
         if searchText != "" {
-            SearchAlbums().search(nameSearch: searchText) { (album, count) in
+			ITunesAPI().searchAlbums(nameSearch: searchText) { (album, count) in
                 if let album = album {
                     self.itemsAlbumsArray += album
                 } else {
