@@ -103,9 +103,17 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SearchAPI" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UO7-pu-cUq">
+                                <rect key="frame" x="62.5" y="208.5" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="ESV-EJ-UaC"/>
+                                    <constraint firstAttribute="width" constant="250" id="JmV-DI-IOn"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="UO7-pu-cUq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hk1-Rj-tKV"/>
                             <constraint firstItem="B8V-hC-CIM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="M2P-Xx-Q3V"/>
                             <constraint firstItem="B8V-hC-CIM" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="O1w-IB-A2Q"/>
                             <constraint firstItem="qea-nm-78r" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RPy-UM-Kdz"/>
@@ -113,6 +121,7 @@
                             <constraint firstItem="B8V-hC-CIM" firstAttribute="top" secondItem="qea-nm-78r" secondAttribute="bottom" id="nU0-Iq-sNG"/>
                             <constraint firstItem="B8V-hC-CIM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oJy-pq-xuj"/>
                             <constraint firstItem="qea-nm-78r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="p5z-XC-eSh"/>
+                            <constraint firstItem="UO7-pu-cUq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vvH-bW-pZ3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -121,6 +130,7 @@
                         <outlet property="activityIndicatorSearch" destination="yuk-Y7-Tpw" id="Z82-OW-Bh2"/>
                         <outlet property="collectionView" destination="B8V-hC-CIM" id="0VW-hX-Cxi"/>
                         <outlet property="searchBarAlbums" destination="qea-nm-78r" id="CDz-W4-xa1"/>
+                        <outlet property="searchImageView" destination="UO7-pu-cUq" id="JAm-cp-rmk"/>
                         <segue destination="kHx-iR-ZvF" kind="show" identifier="showResultAlbum" id="f6b-Vt-Xft"/>
                     </connections>
                 </viewController>
@@ -358,4 +368,7 @@
             <point key="canvasLocation" x="306" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SearchAPI" width="375" height="375"/>
+    </resources>
 </document>

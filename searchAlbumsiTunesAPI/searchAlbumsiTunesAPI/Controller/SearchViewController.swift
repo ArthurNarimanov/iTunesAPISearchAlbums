@@ -10,11 +10,12 @@ import UIKit
 // MARK: - class search and shows albums
 final class SearchViewController: UIViewController {
 
-    @IBOutlet weak var searchBarAlbums: UISearchBar!
+	@IBOutlet weak var searchImageView: UIImageView!
+	@IBOutlet weak var searchBarAlbums: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicatorSearch: UIActivityIndicatorView!
 
-    var searchText: String = ""
+  //  var searchText: String = ""
     
     var itemsAlbumsArray: [AlbumResult] = [] {
         didSet {
@@ -80,6 +81,7 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
 extension SearchViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+		searchImageView.isHidden = true
         activityIndicatorSearch.startAnimating()
         itemsAlbumsArray.removeAll()
         makeNetworkRequest {
@@ -89,6 +91,7 @@ extension SearchViewController: UISearchBarDelegate {
             self.present(alert, animated: true, completion: nil)
             self.searchBarAlbums.text = ""
             self.activityIndicatorSearch.stopAnimating()
+			self.searchImageView.isHidden = false
         }
         collectionView.reloadData()
         view.endEditing(true)
@@ -98,5 +101,6 @@ extension SearchViewController: UISearchBarDelegate {
         itemsAlbumsArray.removeAll()
         collectionView.reloadData()
         searchBarAlbums.text = ""
+		searchImageView.isHidden = false
     }
 }
